@@ -1,7 +1,7 @@
 class Main:
     from transfer_data import TransferData
 
-    start = TransferData("", "Ssonetwo4onesix9!2022")
+    start = TransferData("ssarkar8", "")
     start.connect_to_database()
 
     # import os, zipfile

@@ -6,7 +6,7 @@ class TransferData:
     password = ""
 
     def __init__(self, user, password):
-        self.host = "ssarkar8@falcon.cs.illinois.edu"
+        self.host = "falcon.cs.illinois.edu"
         self.user = user
         self.password = password
 
