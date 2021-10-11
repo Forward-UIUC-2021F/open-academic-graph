@@ -1,35 +1,73 @@
 # Functional Design
 
-### unzip_data_file
+### search_by_keyword
 ```python
-def unzip_data_file(zip_file):
+def search_by_keyword(keyword):
     '''
-    This method unzips a zip file with some data that 
-    needs to be transferred to our database. No output.
+    This method searches OAG for papers by using provided keywords.
+    It returns a list of relevant papers. 
     '''
+    return [papers]
 ```
 
-### get_schema
+### search_by_author
 ```python
-def get_schema(csv_file):
+def search_by_author(author):
     '''
-    Take the unzipped file with data in it and extract schema 
-    information from it. This information will be outputted in the 
-    form of a list of tuples (col_name, data_type)
+    This method searches OAG for papers by using provided author.
+    It returns a list of papers written by given author. 
     '''
-    return schema
+    return [papers]
 ```
 
-### transfer_data
+### search_by_date
 ```python
-def transfer_data(csv_file, schema):
+def search_by_date(start_date, end_date=present):
     '''
-    Take data file and corresponding schema information and transfer
-    it to our own database.
+    This method searches OAG for papers by using provided start
+    and end date. Default end date is present and default start
+    date is data of oldest paper.
+    It returns a list of papers published in given time range.
     '''
+    return [papers]
+```
+
+### search_by_journal
+```python
+def search_by_journal(journal):
+    '''
+    This method searches OAG for papers by using provided journal.
+    It returns a list of papers written by given journal. 
+    '''
+    return [papers]
+```
+
+### search_by_doi
+```python
+def search_by_doi(doi):
+    '''
+    This method searches OAG for papers by using provided DOI.
+    It returns paper associated with DOI. Returns error if invalid
+    DOI provided.
+    '''
+    return paper
+```
+
+### search_by_authors_with_n_papers
+```python
+def search_by_authors_with_n_papers(author, n):
+    '''
+    This method searches OAG for papers by using provided author
+    and number.
+    It returns papers associated with author only if the author
+    published more than n papers.
+    '''
+    return [papers]
 ```
 
 # Algorithmic Design
 First step in this process is to transfer all the data from Open Academic Graph to our own database.
 This will be achieved using Python, MySQL, and a remote workstation where the database will be housed. 
 Once this has been done, we will build an API around the data in order to query it easily and efficiently.
+
+The API will use ElasticSearch to query the data. 
