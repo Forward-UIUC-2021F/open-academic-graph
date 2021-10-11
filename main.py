@@ -1,25 +1,21 @@
 class Main:
     from transfer_data import TransferData
 
-    start = TransferData("ssarkar8", "")
-    start.connect_to_database()
+    # --- create TransferData object, pass in username and password ---
+    data_transfer = TransferData("ssarkar8", "Ssonetwo4onesix9!2022")
+    # --- connect to forward lab remote SSH and mysql db ---
+    data_transfer.connect_to_SSH()
+    # --- unzip files ---
+    data_transfer.unzip_files()
+    data_transfer.connect_to_database()
+    # --- create tables in DB ---
+    # data_transfer.create_tables_dict()
+    # data_transfer.create_tables()
+    data_transfer.show_tables()
 
-    # import os, zipfile
-    #
-    # for filename in os.listdir("."):
-    #     if filename.endswith(".zip"):
-    #         print filename
-    #         name = os.path.splitext(os.path.basename(filename))[0]
-    #         if not os.path.isdir(name):
-    #             try:
-    #                 zip = zipfile.ZipFile(filename)
-    #                 os.mkdir(name)
-    #                 zip.extractall(path=name)
-    #             except zipfile.BadZipfile, e:
-    #                 print "BAD ZIP: " + filename
-    #                 try:
-    #                     os.remove(filename)
-    #                 except OSError as e: # this would be "except OSError, e:" before Python 2.6
-    #                     if e.errno != errno.ENOENT: # errno.ENOENT = no such file or directory
-    #                         raise # re-raise exception if a different error occured
+
+    # --- close connections ---
+    data_transfer.disconnect_from_db()
+    data_transfer.disconnect_from_SSH()
+
 
