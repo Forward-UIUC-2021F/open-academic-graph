@@ -2,7 +2,7 @@ class Main:
     from transfer_data import TransferData
 
     # --- create TransferData object, pass in username and password ---
-    data_transfer = TransferData("ssarkar8", "Ssonetwo4onesix9!2022")
+    data_transfer = TransferData("ssarkar8", "")
     # --- connect to forward lab remote SSH and mysql db ---
     data_transfer.connect_to_SSH()
     # --- unzip files ---
