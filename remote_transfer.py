@@ -17,7 +17,7 @@ class RemoteTransfer:
     def __init__(self):
         self.mysql_host = "owl2.cs.illinois.edu"
         self.mysql_user = "ssarkar"
-        self.mysql_pass = ""
+        self.mysql_pass = "Ab33sE@D"
 
     def connect_to_database(self):
         DB_NAME = 'ssarkar_oag'
@@ -31,6 +31,7 @@ class RemoteTransfer:
         # connect to ssarkar_oag database
         try:
             self.mycursor.execute("USE {}".format(DB_NAME))
+            self.mydb.commit()
             print("Connected to", DB_NAME)
         except mysql.connector.Error as err:
             print(err)
@@ -46,16 +47,16 @@ class RemoteTransfer:
         self.filenames = next(walk(mypath), (None, None, []))[2]  # [] if no file
 
     def add_to_sql(self):
-        for f in self.filenames:
-            with open(f, newline='', encoding="utf8") as csvfile:
-                spamreader = csv.reader(csvfile)
-                for row in spamreader:
-                    # Prepare SQL query to INSERT a record into the database.
-                    sql = "INSERT INTO venue_linking_pairs(aid, mid) VALUES ('%s', '%s');" % (row[0], row[1])
-                    print(sql)
-                    try:
-                        # Execute the SQL command
-                        self.mycursor.execute(sql)
-                    except:
-                        # Rollback in case there is any error
-                        print("There was an error.")
+        df = pd.read_json("/home/ssarkar8/oag-project/oag_files/author_linking_pairs.txt", lines=True)
+        count = 0
+        try:
+            for index, row in df.iterrows():
+                count += 1
+                data = ('{}'.format(row.mid), '{}'.format(row.aid))
+                self.mycursor.execute("INSERT INTO author_linking_pairs (mid,aid) values(%s,%s)", data)
+                self.mydb.commit()
+                if count % 10000 == 0:
+                    print("Inserted 10,000 more rows")
+        except:
+            print("error")
+        print("Inserted {} rows".format(count))

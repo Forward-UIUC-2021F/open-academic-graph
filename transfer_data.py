@@ -46,6 +46,7 @@ class TransferData:
                                             host=self.mysql_host)
         print("Connected to DB")
         self.mycursor = self.mydb.cursor()
+        self.mycursor
 
         # connect to ssarkar_oag database
         try:
