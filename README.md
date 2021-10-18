@@ -90,6 +90,7 @@ if we will need to utilize *all* of these capabilities, but it will certainly he
 the data. 
 
 The diagram below also shows how users can make queries and the API built will convert it into an ElasticSearch
-query that communicates with ElasticSearch to return the requested data. 
+query that communicates with ElasticSearch to return the requested data. Will also potentially use Kibana
+for its monitoring and reporting capabilities. 
 
 ![Algorithmic Design](Algorithmic%20Design.jpeg)
