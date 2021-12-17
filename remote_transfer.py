@@ -17,7 +17,7 @@ class RemoteTransfer:
     def __init__(self):
         self.mysql_host = "owl2.cs.illinois.edu"
         self.mysql_user = "ssarkar"
-        self.mysql_pass = "Ab33sE@D"
+        self.mysql_pass = ""
 
     def connect_to_database(self):
         DB_NAME = 'ssarkar_oag'
