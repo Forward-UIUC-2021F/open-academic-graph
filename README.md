@@ -1,50 +1,48 @@
 # Functional Design
 
-### search_by_keyword
+### search_author_by_keyword
 ```python
-def search_by_keyword(keyword):
+def search_author_by_keyword(keyword):
     '''
-    This method searches OAG for papers by using provided keywords.
-    It returns a list of relevant papers. 
+    This method searches OAG for authors by using provided keywords.
+    It returns a list of relevant authors. 
+    '''
+    return [authors]
+```
+
+### search_author_name
+```python
+def search_author_name(name):
+    '''
+    This method searches OAG for author by using provided name.
+    It returns given author. 
+    '''
+    return [authors]
+```
+
+### search_paper_by_author_name
+```python
+def search_paper_by_author_name(name):
+    '''
+    This method searches OAG for papers by using provided name.
+    It returns a list of papers by given author.
     '''
     return [papers]
 ```
 
-### search_by_author
+### search_paper_by_keyword
 ```python
-def search_by_author(author):
+def search_paper_by_keyword(keyword):
     '''
-    This method searches OAG for papers by using provided author.
-    It returns a list of papers written by given author. 
+    This method searches OAG for papers by using provided keyword.
+    It returns a list of papers written by given keyword. 
     '''
     return [papers]
 ```
 
-### search_by_date
+### search_paper_by_doi
 ```python
-def search_by_date(start_date, end_date=present):
-    '''
-    This method searches OAG for papers by using provided start
-    and end date. Default end date is present and default start
-    date is data of oldest paper.
-    It returns a list of papers published in given time range.
-    '''
-    return [papers]
-```
-
-### search_by_journal
-```python
-def search_by_journal(journal):
-    '''
-    This method searches OAG for papers by using provided journal.
-    It returns a list of papers written by given journal. 
-    '''
-    return [papers]
-```
-
-### search_by_doi
-```python
-def search_by_doi(doi):
+def search_paper_by_doi(doi):
     '''
     This method searches OAG for papers by using provided DOI.
     It returns paper associated with DOI. Returns error if invalid
@@ -53,30 +51,7 @@ def search_by_doi(doi):
     return paper
 ```
 
-### search_by_authors_with_n_papers
-```python
-def search_by_authors_with_n_papers(author, n):
-    '''
-    This method searches OAG for papers by using provided author
-    and number.
-    It returns papers associated with author only if the author
-    published more than n papers.
-    '''
-    return [papers]
-```
 
-### search_by_papers_with_n_citations
-```python
-def search_by_papers_with_n_citations(paper=None, n):
-    '''
-    This method searches OAG for papers by using provided paper
-    and number.
-    It returns papers associated with n or more citations. If no
-    paper is provided then the query will simply return all papers
-    with n or more citations.
-    '''
-    return [papers]
-```
 
 # Algorithmic Design
 First step in this process is to transfer all the data from Open Academic Graph to our own database.
