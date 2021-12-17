@@ -1,0 +1,41 @@
+{
+  "venue_linking_pairs" : {
+    "aliases" : { },
+    "mappings" : {
+      "properties" : {
+        "@mid" : {
+          "type" : "text"
+        },
+        "@aid" : {
+          "type" : "text",
+        }
+      }
+    }
+  }
+  "author_linking_pairs" : {
+    "aliases" : { },
+    "mappings" : {
+      "properties" : {
+        "@mid" : {
+          "type" : "text"
+        },
+        "@aid" : {
+          "type" : "text",
+        }
+      }
+    }
+  }
+  "paper_linking_pairs" : {
+    "aliases" : { },
+    "mappings" : {
+      "properties" : {
+        "@mid" : {
+          "type" : "text"
+        },
+        "@aid" : {
+          "type" : "text",
+        }
+      }
+    }
+  }
+}

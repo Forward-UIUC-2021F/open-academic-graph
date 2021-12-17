@@ -65,9 +65,32 @@ def search_by_authors_with_n_papers(author, n):
     return [papers]
 ```
 
+### search_by_papers_with_n_citations
+```python
+def search_by_papers_with_n_citations(paper=None, n):
+    '''
+    This method searches OAG for papers by using provided paper
+    and number.
+    It returns papers associated with n or more citations. If no
+    paper is provided then the query will simply return all papers
+    with n or more citations.
+    '''
+    return [papers]
+```
+
 # Algorithmic Design
 First step in this process is to transfer all the data from Open Academic Graph to our own database.
 This will be achieved using Python, MySQL, and a remote workstation where the database will be housed. 
 Once this has been done, we will build an API around the data in order to query it easily and efficiently.
 
-The API will use ElasticSearch to query the data. 
+The API will use ElasticSearch to query the data. In the diagram below we see that we are utilizing 
+logstash to connect the MySQL databse and ElasticSearch. Logstash has the additional benefit of being 
+capable of collecting, normalizing, and writing application data to multiple sources. It is not clear yet
+if we will need to utilize *all* of these capabilities, but it will certainly help to collect and normalize
+the data. 
+
+The diagram below also shows how users can make queries and the API built will convert it into an ElasticSearch
+query that communicates with ElasticSearch to return the requested data. Will also potentially use Kibana
+for its monitoring and reporting capabilities. 
+
+![Algorithmic Design](Algorithmic%20Design.jpeg)
