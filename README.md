@@ -1,3 +1,17 @@
+# Setup 
+1. Download necessary dependencies detailed in requirements.txt using the following command:
+    ```python
+    pip install -r requirements.txt
+    ```    
+2. Install MySQL to open oagdump.sql
+3. Run *interact.py* to see module in action 
+    ```python
+    python3 interact.py
+    ```
+# Repo File Structure
+open-academic-graph
+ 
+
 # Functional Design
 
 ### search_author_by_keyword
