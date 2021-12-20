@@ -9,7 +9,19 @@
     python3 interact.py
     ```
 # Repo File Structure
+```python
 open-academic-graph
+    - README.md
+    - AlgorithmicDesign.jpeg
+    - interact.py
+    - main.py
+    - main2.py
+    - mysql_connect_es.py
+    - remote_transfer.py 
+    - requirements.txt 
+    - transfer_data.py
+```
+
  
 
 # Functional Design
