@@ -95,3 +95,6 @@ query that communicates with ElasticSearch to return the requested data. Will al
 for its monitoring and reporting capabilities. 
 
 ![Algorithmic Design](Algorithmic%20Design.jpeg)
+
+# Issues and Future Work 
+- The module runs slowly, needs to be optimized to use ElasticSearch
